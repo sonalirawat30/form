@@ -7,10 +7,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-myReactiveForm:FormGroup;
+public myReactiveForm:FormGroup;
   constructor() { }
 
   ngOnInit(): void {
+    this.signUpForm();
+  }
+  
+ public signUpForm():void{
     this.myReactiveForm = new FormGroup({
       Name:new FormControl(null),
       Email:new FormControl(null),
@@ -22,7 +26,7 @@ myReactiveForm:FormGroup;
       city:new FormControl(null),
     });
   }
-  onSubmit(){
+  public onSubmit():void{
       console.log(this.myReactiveForm)
   }
 }

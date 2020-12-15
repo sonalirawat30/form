@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { FormComponent } from './form/form.component';
+import { UserFormComponent} from  './user-form/user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

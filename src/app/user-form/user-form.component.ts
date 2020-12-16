@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { FormControl, FormGroup, Validators , FormBuilder} from '@angular/forms';
 @Component({
   selector: 'pm-user-form',
   templateUrl: './user-form.component.html',
@@ -8,25 +7,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UserFormComponent implements OnInit {
 public myReactiveForm:FormGroup;
-  constructor() { }
+submitted = false;
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.signUpForm();
   }
   
  public signUpForm():void{
-    this.myReactiveForm = new FormGroup({
-      Name:new FormControl(null),
-      Email:new FormControl(null),
-      Mobile_No:new FormControl(null),
-      Password:new FormControl(null),
-      confirmPassword:new FormControl(null),
-      phone:new FormControl(null),
-      Gender:new FormControl(null),
-      city:new FormControl(null),
+    this.myReactiveForm = this.formBuilder.group ({
+      Name:[null,[Validators.required]] ,
+      Email:[null,[Validators.required]],
+      Mobile_No:[null,[Validators.required]],
+      Password:[null,[Validators.required]],
+      confirmPassword:[null,[Validators.required]],
+      phone:[null,[Validators.required]],
+      Gender:[null,[Validators.required]],
+      City:[null,[Validators.required]],
+
     });
   }
-  public onSubmit():void{
-      console.log(this.myReactiveForm)
+      get f() {
+    return this.myReactiveForm.controls;
   }
-}
+  public onSubmit():void{
+    this.submitted = true;
+    if (this.myReactiveForm.valid) {
+      alert('Form Submitted succesfully');
+      console.log(this.myReactiveForm)
+      }
+    }
+      onReset() {
+        this.submitted = false;
+        this.myReactiveForm.reset();
+    }
+  }

@@ -15,7 +15,7 @@ import { UserFormComponent} from  './user-form/user-form.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

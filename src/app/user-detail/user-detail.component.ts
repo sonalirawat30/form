@@ -13,7 +13,6 @@ export class UserDetailComponent implements OnInit {
     address:'',
     course:''
   };
-
   constructor() { }
 
   ngOnInit(): void {

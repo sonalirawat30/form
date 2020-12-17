@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators , FormBuilder} from '@angular/forms';
 @Component({
   selector: 'pm-user-form',
-  templateUrl: './user-form.component.html',
+  templateUrl:'./user-form.component.html', 
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {

@@ -18,7 +18,7 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
-   onClick(){
+  public onClick():void{
      console.log(this.dataForm);
    }
 }

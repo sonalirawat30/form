@@ -12,8 +12,6 @@ export class UserDetailComponent implements OnInit {
     email:'',
     address:'',
     course:''
-
-
   };
 
   constructor() { }

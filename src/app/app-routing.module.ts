@@ -2,12 +2,11 @@ import { Routes ,RouterModule} from '@angular/router';
 import {NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-
+import { UserFormComponent } from './user-form/user-form.component';
 const routes:Routes = [
-    {path: '',redirectTo :'/userdetail', pathMatch:'full'},
-    {path:' userdetail' ,component:UserDetailComponent},
+    {path:'',redirectTo:'formvalidation',pathMatch:'full'},
     {path:'formvalidation' ,component:FormValidationComponent},
+    {path:'userform' ,component:UserFormComponent},
     {path:'**' ,component:PageNotFoundComponent }
 ];
 
@@ -17,5 +16,5 @@ const routes:Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponent = [UserDetailComponent,FormValidationComponent,PageNotFoundComponent]
+export const routingComponent = [FormValidationComponent,UserFormComponent,PageNotFoundComponent]
   

@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
- import { HttpClient} from '@angular/common/http';
+ import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { EmployeesComponent } from './employees/employees.component';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +18,23 @@ export class DataService {
 //     {"id":3,"name":"Jyoti","age":23}
 // ];
 //   }}
-    private _url:string="/assets/example/employees.json";
+    private _url:string="/assets/example/emloyees.json";
 
-    constructor(private http:HttpClient) { }
-     getEmployees():Observable<IEmployee[]>{
-    return this.http.get<IEmployee[]>(this._url);
-   }
-  }
+    
+    
+    constructor(private http:HttpClient) 
+    {
+             console.log(1)
+     }
+     getEmployees():Observable<IEmployee[]>
+     {
+      console.log(2)
+
+    return this.http.get<IEmployee[]>(this._url)
+    console.log(3)
+
+    }
+   };
+     
 
  

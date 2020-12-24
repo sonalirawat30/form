@@ -1,0 +1,21 @@
+ <h3 style="text-align: center;">Services</h3>
+ 
+ 
+ <div class="container">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th width=400>ID</th>
+            <th width=400>Name</th>
+            <th width=200>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employees of employees">
+            <td>{{employees.id}}</td>
+            <td>{{employees.name}}</td>
+            <td>{{employees.age}}</td>
+            </tr>
+        </tbody>
+      </table>
+</div> 

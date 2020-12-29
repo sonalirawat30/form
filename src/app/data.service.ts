@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { EmployeesComponent } from './employees/employees.component';
 
 
@@ -26,7 +27,8 @@ export class DataService {
       return this.http.delete<IEmployee[]>(this._url + id);  
     }  
     createData(employees):Observable<IEmployee[]> {  
-      return this.http.post<IEmployee[]>(this._url, employees);  
+      return this.http.post<any>(this._url, employees)
+      .pipe(map(response => response.json()));  
     }  
     getEmployeeById(id: number) {  
       return this.http.get<IEmployee[]>(this._url +id);  

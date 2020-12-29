@@ -29,27 +29,23 @@ export class EmployeesComponent implements OnInit {
 
     createData()
     {
-      let employeeLength = this.employees.length;
-      let id = employeeLength + 1
-      this.employees.push({id:id,name:this.userName,age:this.userAge})
-      // this._dataService.createData({id:4,name:this.userName,age:35,email:this.userEmail})
-      //   .subscribe(data => console.log(data))
+        this._dataService.createData(this.employees)
+        .subscribe(data => console.log(data))
     }
       deleteData(i){
       this._dataService.deleteData(i)
       .subscribe(data => console.log(data))
-      this.employees.splice(i,1)
+       this.employees.splice(i,1)
       }
 
-    //    editData(i){
-    //     this.myVal=this.employees;
-    //     this.employees.
-    //    this.employees({
-    //      id:this.employees[i].id,
-    //      name : this.employees[i].name
-    //    })
-    //  }
-
+      editData(i){
+        this.myVal=this.employees;
+        this.employees.setValue({
+          id:this.employees[i].id,
+          name:this.employees[i].name
+      })
+     }
+ 
       updateData() {   
       this._dataService.updateData(this.myVal)
        .subscribe(data => console.log(data))

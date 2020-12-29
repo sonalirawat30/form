@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
 import { EmployeesComponent } from './employees/employees.component';
 
 
@@ -19,19 +18,23 @@ export class DataService {
   // ];
   //   }}
   private _url: string = "/assets/example/emloyees.json";
-
-
-
-  constructor(private http: HttpClient) {
-    console.log(1)
-  }
-  getEmployees(): Observable<IEmployee[]> {
-    console.log(2)
-
+  constructor(private http: HttpClient) {}
+   getEmployees(): Observable<IEmployee[]> {
     return this.http.get<IEmployee[]>(this._url)
-
+    }
+    deleteData(id: number):Observable<IEmployee[]> {  
+      return this.http.delete<IEmployee[]>(this._url + id);  
+    }  
+    createData(employees):Observable<IEmployee[]> {  
+      return this.http.post<IEmployee[]>(this._url, employees);  
+    }  
+    getEmployeeById(id: number) {  
+      return this.http.get<IEmployee[]>(this._url +id);  
+    }  
+    updateData(employees) {  
+      return this.http.put(this._url + employees.id, employees);  
   }
 };
 
-
+           
 

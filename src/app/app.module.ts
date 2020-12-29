@@ -26,4 +26,9 @@ import { DataService } from './data.service';
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log('module loaded')
+  }
+ }
+

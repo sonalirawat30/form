@@ -7,9 +7,8 @@ const routes:Routes = [
     {path:'',redirectTo:'formvalidation',pathMatch:'full'},
     {path:'formvalidation' ,component:FormValidationComponent},
     {path:'userform' ,component:UserFormComponent},
-    {path:'userdetail',loadChildren:'/user-detail'},
     {path:'**' ,component:PageNotFoundComponent },
-    {path: 'student', loadChildren: './student/student.module#StudentModule'}
+    {path: 'userform', loadChildren: './user-form/user-form.module#UserFormModule'}
 ];
 @NgModule({
     imports :[RouterModule.forRoot(routes)],

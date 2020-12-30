@@ -5,15 +5,17 @@ import { AppRoutingModule,routingComponent} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user-form/user-form.component';
-import { EmployeesComponent } from './employees/employees.component';
 import { DataService } from './data.service';
+import { CrudComponent } from './crud/crud.component';
+import { ExampleComponent } from './example/example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserFormComponent,
     routingComponent,
-    EmployeesComponent
+    CrudComponent,
+    ExampleComponent
   
   ],
   imports: [

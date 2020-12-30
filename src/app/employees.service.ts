@@ -3,12 +3,12 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
-
+import { CrudComponent } from './crud/crud.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class EmployeesService {
   //  constructor() {}
   //   getEmployees(){ 
   //     return [
@@ -36,9 +36,6 @@ export class DataService {
     }  
     updateData(employees) {  
       return this.http.put(this._url + employees.id, employees);  
-  }
-  getData(){
-    return this.http.get("assets\example\employee.json")
   }
 };
 

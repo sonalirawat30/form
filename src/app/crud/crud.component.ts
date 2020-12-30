@@ -1,30 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { IEmployee } from '../employee';
+import { EmployeesService } from '../employees.service';
 @Component({
-  selector: 'app-employees',
-  templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
+  selector: 'app-crud',
+  templateUrl: './crud.component.html',
+  styleUrls: ['./crud.component.css']
 })
-export class EmployeesComponent implements OnInit {
+export class CrudComponent implements OnInit {
   public employees;
   myVal;
   userName:string;
   userEmail:string;
   userAge:number;
 
-  constructor(private _dataService: DataService) { }
+  constructor(private _employeesService: EmployeesService) { }
 
   ngOnInit(): void {
-    this.getEmployee()
+    this.getEmployess()
     //  this.employees =  [
     //     {"id":1,"name":"Shona","age":20,"email":"sri"},
     //     {"id":2,"name":"Shiva","age":24,"email":"nivas"},
     //     {"id":3,"name":"Jyoti","age":23,"email":"neelam"}
     // ]
     }
-    getEmployee(){
-      this._dataService.getEmployees()
+    getEmployess(){
+      this._employeesService.getEmployees()
       .subscribe((data) => {
         this.employees = data;
       });
@@ -32,13 +31,13 @@ export class EmployeesComponent implements OnInit {
 
     createData()
     { 
-        this._dataService.createData(this.employees)
+        this._employeesService.createData(this.employees)
         .subscribe((res) => {console.log(res)
-          this.getEmployee()
+          this.getEmployess()
         })
     }
       deleteData(i){
-      this._dataService.deleteData(i)
+      this._employeesService.deleteData(i)
       .subscribe(data => console.log(data))
        this.employees.splice(i,1)
       }
@@ -52,7 +51,7 @@ export class EmployeesComponent implements OnInit {
      }
  
       updateData() {   
-      this._dataService.updateData(this.myVal)
+      this._employeesService.updateData(this.myVal)
        .subscribe(data => console.log(data))
     }
 

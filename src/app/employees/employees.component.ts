@@ -16,21 +16,26 @@ export class EmployeesComponent implements OnInit {
   constructor(private _dataService: DataService) { }
 
   ngOnInit(): void {
-    this._dataService.getEmployees()
-      .subscribe((data) => {
-        this.employees = data;
-      });
+    this.getEmployee()
     //  this.employees =  [
     //     {"id":1,"name":"Shona","age":20,"email":"sri"},
     //     {"id":2,"name":"Shiva","age":24,"email":"nivas"},
     //     {"id":3,"name":"Jyoti","age":23,"email":"neelam"}
     // ]
     }
+    getEmployee(){
+      this._dataService.getEmployees()
+      .subscribe((data) => {
+        this.employees = data;
+      });
+    }
 
     createData()
-    {
+    { 
         this._dataService.createData(this.employees)
-        .subscribe(data => console.log(data))
+        .subscribe((res) => {console.log(res)
+          this.getEmployee()
+        })
     }
       deleteData(i){
       this._dataService.deleteData(i)

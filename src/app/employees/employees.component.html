@@ -32,10 +32,17 @@
           <td>{{employees.name}}</td>
           <td>{{employees.age}}</td>
           <td>
-            <a class="btn btn-success" (click)="editData(i)">Edit</a>
-            <a class="btn btn-danger" (click)="deleteData(i)">Delete</a>
+            <a class="btn btn-success" (click)="editData(employees)">Edit</a>
+            <a class="btn btn-danger" (click)="deleteData(employees.id)">Delete</a>
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+  
+  <div class="container">
+    <h2>Edit User</h2>
+      <input [(ngModel)]="updatedUserName">
+      <input [(ngModel)]="updatedUserAge">
+    <button (click)="updateData()">Update </button>
   </div>

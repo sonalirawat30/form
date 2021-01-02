@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @Injectable({
@@ -23,7 +24,7 @@ export class DataService {
     return this.http.get<IEmployee[]>(this._url+ 'Employees')
     }
     deleteData(id: number):Observable<IEmployee[]> {  
-      return this.http.delete<IEmployee[]>(this._url + id);  
+      return this.http.delete<IEmployee[]>(this._url + 'Employees/' + id);  
     }  
     createData(employees):Observable<IEmployee[]> {  
       return this.http.post<any>(this._url+ 'Employees', employees)
@@ -34,11 +35,11 @@ export class DataService {
     getEmployeeById(id: number) {  
       return this.http.get<IEmployee[]>(this._url +id);  
     }  
-    updateData(employees) {  
-      return this.http.put(this._url + employees.id, employees);  
-  }
-  getData(){
-    return this.http.get("assets\example\employee.json")
+    updateData(employees):Observable<any> {  
+      return this.http.put(this._url + 'Employees/' + Number(employees.id), employees)
+      .pipe(
+        retry(0)
+        );
   }
 };
 

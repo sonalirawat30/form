@@ -13,7 +13,8 @@ submitted = false;
   ngOnInit(): void {
     this.signUpForm();
   }
-  
+  public onClick():void{
+    console.log(this.myReactiveForm);}
  public signUpForm():void{
     this.myReactiveForm = this.formBuilder.group ({
       Name:[null,[Validators.required]] ,
@@ -41,4 +42,6 @@ submitted = false;
         this.submitted = false;
         this.myReactiveForm.reset();
     }
-  }
+  
+    }
+  

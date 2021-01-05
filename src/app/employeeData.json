@@ -1,58 +1,39 @@
 {
-  "Employees": [
+  "employees": [
     {
-      "id": 1609263189046,
-      "name": "shiva",
-      "age": 2
+      "name": "Raj",
+      "age": 23,
+      "id": "AQUItuM"
     },
-    [
-      {
-        "id": 1609263189046,
-        "name": "shiv",
-        "age": 23
-      }
-    ],
-    [
-      {
-        "id": 1609263189046,
-        "name": "shona",
-        "age": 23
-      },
-      [
-        {
-          "id": 1609263189046,
-          "name": "shivam",
-          "age": 24
-        }
-      ]
-    ],
-    [
-      {
-        "id": 1609263189046,
-        "name": "shiva",
-        "age": 2
-      },
-      [
-        {
-          "id": 1609263189046,
-          "name": "shiv",
-          "age": 23
-        }
-      ],
-      [
-        {
-          "id": 1609263189046,
-          "name": "shona",
-          "age": 23
-        },
-        [
-          {
-            "id": 1609263189046,
-            "name": "shivam",
-            "age": 24
-          }
-        ]
-      ]
-    ]
+    {
+      "name": "Ramesh",
+      "age": 35,
+      "id": "6B5hvte"
+    },
+    {
+      "name": "Rakesh ",
+      "age": 34,
+      "id": "4wZcTUf"
+    },
+    {
+      "name": "Santosh",
+      "age": 45,
+      "id": "miXgzOZ"
+    },
+    {
+      "name": "Jyoti",
+      "age": 55,
+      "id": "AeAsRyw"
+    },
+    {
+      "name": "sonali ",
+      "age": 4,
+      "id": "9Yyj4ZU"
+    },
+    {
+      "name": "aksh",
+      "age": 2,
+      "id": "5L3vpen"
+    }
   ]
 }

@@ -8,7 +8,7 @@ const routes:Routes = [
     {path:'formvalidation' ,component:FormValidationComponent},
     {path:'userform' ,component:UserFormComponent},
     {path:'**' ,component:PageNotFoundComponent },
-    {path: 'userform', loadChildren: './user-form/user-form.module#UserFormModule'}
+     {path: 'userform', loadChildren: './user-form/user-form.module#UserFormModule'}
 ];
 @NgModule({
     imports :[RouterModule.forRoot(routes)],

@@ -12,7 +12,5 @@ import { UserFormRoutingModule } from './user-form-routing.module';
   ]
 })
 export class UserFormModule { 
-  constructor(){
-    console.log('user-form module loaded')
-  }
+  constructor(){}
 }

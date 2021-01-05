@@ -33,10 +33,9 @@ submitted = false;
   }
   public onSubmit():void{
     this.submitted = true;
-    if (this.myReactiveForm.valid) {
-      alert('Form Submitted succesfully');
-      console.log(this.myReactiveForm)
-      }
+    // if (this.myReactiveForm.valid) {
+    //   console.log(this.myReactiveForm)
+    //   }
     }
       onReset() {
         this.submitted = false;

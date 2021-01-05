@@ -1,5 +1,4 @@
  export interface IServe{
     id?: number,
-    name: string,
-    age:number
+    title: string
 }

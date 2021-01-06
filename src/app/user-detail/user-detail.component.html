@@ -1,3 +1,4 @@
+
 <div class="container">
     <form #form="ngForm" ngNativeValidate>
         <h3 style="text-align: center">SignUp</h3>
@@ -5,13 +6,15 @@
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" [(ngModel)]="dataForm.name" #name="ngModel" required>
         </div>
+        
         <div class="row">
             <div class="col-lg-6">
-        <div class="form-group">
+           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email"  [(ngModel)]="dataForm.email" #email="ngModel" required>
             </div>
         </div>
+        
         <div class="col-lg-6">
             <div class="form-group">
                 <label for="address">Address</label>
@@ -19,6 +22,7 @@
                 </div>
             </div>
         </div>
+       
         <div class="form-group">
             <label for="course">Course</label>
             <select class="form-control" id="course" [(ngModel)]="dataForm.course" #course="ngModel" required>
@@ -28,7 +32,8 @@
                 <option>JQuery</option>
             </select>
             </div>
-        <button class="btn btn-primary" type="submit" (click)="onClick()">Submit</button>
+       
+            <button class="btn btn-primary" type="submit" (click)="onClick()">Submit</button>
     </form>
 </div>
 

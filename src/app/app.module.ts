@@ -8,15 +8,15 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { DataService } from './data.service';
 import { ServeComponent } from './serve/serve.component';
-
+import { LimitPipe } from './limit.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     UserFormComponent,
     routingComponent,
     EmployeesComponent,
-    ServeComponent
-    
+    ServeComponent,
+    LimitPipe
   ],
   imports: [
     BrowserModule,

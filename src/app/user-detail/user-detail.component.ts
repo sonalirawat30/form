@@ -6,6 +6,7 @@ import { dataForm } from '../data/data-form';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
 })
+
 export class UserDetailComponent implements OnInit {
    dataForm:dataForm ={
     name:'',

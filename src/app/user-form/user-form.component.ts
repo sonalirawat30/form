@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators , FormBuilder} from '@angular/forms';
+
 @Component({
   selector: 'pm-user-form',
   templateUrl:'./user-form.component.html', 
   styleUrls: ['./user-form.component.css']
 })
+
 export class UserFormComponent implements OnInit {
 public myReactiveForm:FormGroup;
 submitted = false;
@@ -15,7 +17,8 @@ submitted = false;
   }
   public onClick():void{
     console.log(this.myReactiveForm);}
- public signUpForm():void{
+
+    public signUpForm():void{
     this.myReactiveForm = this.formBuilder.group ({
       Name:[null,[Validators.required]] ,
       Email:[null,[Validators.required]],

@@ -1,12 +1,15 @@
 
-<h1> 
-   List! 
-</h1> 
+
+<div class="container my-5">
+  <h1>List with limit</h1> 
   
-<ul> 
-  <li *ngFor="let serve of serve"> 
-    <p>{{serve.id}}</p> 
-    <p> {{serve.title}}</p> 
-      
-  </li> 
-</ul> 
+  <ul class="list-group">
+    <li class="list-group-item"
+      *ngFor="let serve of serveList | limit: 15">
+
+      console.log(hi)
+      <span class="badge badge-primary">{{serve.id}}</span> - {{serve.title}}
+    </li>
+  </ul>
+
+</div>

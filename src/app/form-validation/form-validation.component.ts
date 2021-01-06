@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './form-validation.component.html',
   styleUrls: ['./form-validation.component.css']
 })
+
 export class FormValidationComponent implements OnInit {
  public data:any={}
   constructor() { }

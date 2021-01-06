@@ -1,3 +1,4 @@
+
 <div class="container">
     <form name="form" #f="ngForm" novalidate>
         <h3 style="text-align: center">SignUp</h3>
@@ -9,7 +10,8 @@
                 <p>Name is required</p>
                 </div>
         </div>
-           <div class="row">
+
+        <div class="row">
                <div class="col-lg-6">
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -20,7 +22,8 @@
             </div>
         </div>
                </div>
-           <div class="col-lg-6">
+
+               <div class="col-lg-6">
             <div class="form-group">
                 <label for="mobile">Mobile</label>
                 <input type="number" class="form-control" [(ngModel)]="data.mobile" #mobile="ngModel"
@@ -67,6 +70,7 @@
     </div>
         
     <button class="btn btn-primary" type="submit" (click)="onClick()">Submit</button>       
-    </form>
+   
+</form>
 </div>
 

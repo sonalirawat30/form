@@ -9,6 +9,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { DataService } from './data.service';
 import { ServeComponent } from './serve/serve.component';
 import { LimitPipe } from './limit.pipe';
+import { AgeValidator } from './custom-validator/age.validator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,11 +25,13 @@ import { LimitPipe } from './limit.pipe';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule ,
-    HttpClientModule
+    HttpClientModule,
+    AgeValidator
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
   constructor(){}
  }

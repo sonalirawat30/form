@@ -12,7 +12,7 @@ import { IServe } from  './serve';
 export class ServeService {
   constructor(private http:HttpClient) { }
   getData(): Observable<IServe[]> {
-    return this.http.get<IServe[]>('https://jsonplaceholder.typicode.com/albums');
+    return this.http.get<IServe[]>('https://jsonplaceholder.typicode.com/users');
   }
 
 }

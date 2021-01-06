@@ -1,14 +1,18 @@
+
 import { Component, OnInit } from '@angular/core';
 import { dataForm } from '../data/data-form';
 
 @Component({
+  
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
+
 })
 
 export class UserDetailComponent implements OnInit {
-   dataForm:dataForm ={
+  
+  dataForm:dataForm ={
     name:'',
     email:'',
     address:'',

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { ageValidator } from '../custom-validator/age-validator';
 
 @Component({
   selector: 'pm-user-form',
@@ -9,13 +8,11 @@ import { ageValidator } from '../custom-validator/age-validator';
 })
 
 export class UserFormComponent implements OnInit {
-
   public myReactiveForm: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
     this.signUpForm();
   }
   public onClick(): void {
@@ -23,7 +20,6 @@ export class UserFormComponent implements OnInit {
   }
 
   public signUpForm(): void {
-
     this.myReactiveForm = this.formBuilder.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required]],

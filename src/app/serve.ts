@@ -1,4 +1,7 @@
  export interface IServe{
     id?: number,
-    title: string
+    name: string,
+    username: string,
+    email: string,
+    address: string
 }

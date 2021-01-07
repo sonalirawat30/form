@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { ageValidator } from '../custom-validator/age.validator';
+import { ageValidator } from '../custom-validator/age-validator';
 
 @Component({
   selector: 'pm-user-form',
@@ -25,14 +25,14 @@ export class UserFormComponent implements OnInit {
   public signUpForm(): void {
 
     this.myReactiveForm = this.formBuilder.group({
-      Name: [null, [Validators.required]],
-      Email: [null, [Validators.required]],
-      Mobile_No: [null, [Validators.required]],
-      Password: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      email: [null, [Validators.required]],
+      mobile_No: [null, [Validators.required]],
+      password: [null, [Validators.required]],
       confirmPassword: [null, [Validators.required]],
-      gender: [null, [Validators.required]],
-      age: [null, [Validators.required]],
-      City: [null, [Validators.required]],
+      gender: 'female',
+      age: '',
+      city: [null, [Validators.required]],
       acceptTerms: [null, Validators.required]
     });
   }
@@ -47,5 +47,14 @@ export class UserFormComponent implements OnInit {
     this.submitted = false;
     this.myReactiveForm.reset();
   }
-
-}
+  setGender(key:string):void{
+    const ageControl = this.myReactiveForm.get('age');
+    if(key ==='male'){
+      ageControl.setValidators(Validators.required);
+    }
+    else {
+      ageControl.clearValidators();
+    }
+     ageControl.updateValueAndValidity();
+    }
+  }

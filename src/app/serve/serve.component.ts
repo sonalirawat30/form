@@ -24,10 +24,10 @@ export class ServeComponent implements OnInit {
         this.serveList = this.serveList.filter(data=> data["username"].length>6)
          console.log(this.serveList)
        
-        //  this.serveList = this.serveList.map(data=>"Name:"+ data.name)
-        //  console.log(this.serveList)
+          this.serveList = this.serveList.map(data=>"Name:"+ data.name)
+          console.log(this.serveList)
 
-         const serve = this.serveList.pop();
+          const serve = this.serveList.pop();
          console.log(serve)
 
          const array = this.serveList.splice(0,1);
@@ -36,11 +36,8 @@ export class ServeComponent implements OnInit {
          const s = this.serveList.shift();
          console.log(s)
 
-          var r = this.serveList.toString();
-          console.log(r)
-
-          const t = this.serveList.shift();
-         console.log(t)
+         const r = this.serveList.unshift("xyz");
+         console.log(r)
         
     })
 }}

@@ -9,6 +9,17 @@ import { EmployeesComponent } from './employees/employees.component';
 import { DataService } from './data.service';
 import { ServeComponent } from './serve/serve.component';
 import { LimitPipe } from './limit.pipe';
+import { LoginComponent } from './login/login.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+// import { MatErrorModule } from '@angular/material/error';
 
 @NgModule({
   declarations: [
@@ -17,7 +28,9 @@ import { LimitPipe } from './limit.pipe';
     routingComponent,
     EmployeesComponent,
     ServeComponent,
-    LimitPipe
+    LimitPipe,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,6 +38,16 @@ import { LimitPipe } from './limit.pipe';
     ReactiveFormsModule,
     FormsModule ,
     HttpClientModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    FlexLayoutModule,
+    // MatErrorModule
+
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
